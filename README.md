@@ -1,5 +1,6 @@
 # vue-element-admin-learning
 
+学习基于vue-element-admin的后台管理页面一步步地搭建
 ## Project setup
 ```
 npm install
