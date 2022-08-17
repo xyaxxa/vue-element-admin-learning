@@ -1,9 +1,9 @@
 <template>
-    <div class="main">
+    <div class="app-wrapper">
         <side-bar class="sidebar" />
-        <div>
-        <nav-bar class="navbar" />
-        <app-main class="appmain" />
+        <div class="main-container">
+            <nav-bar class="navbar" />
+            <app-main class="appmain" />
         </div>
     </div>
 </template>
@@ -22,24 +22,29 @@ export default {
 </script>
 
 <style scoped>
-    .main {
+    .app-wrapper {
         height:100%;
+        width:100%;
         display:flex;
-        flex-flow:column,wrap;
     }
     .sidebar {
         height:100%;
-        width:20%;
-        background-color:blue;
+        width:15%;
+        background-color:lightblue;
+    }
+    .main-container {
+        height:100%;
+        flex-grow: 1;
+        display:flex;
+        flex-direction:column;
     }
     .navbar {
-        height:20%;
-        width:80%;
-        background-color:yellow;
+        height:10%;
+        background-color:lightyellow;
     }
     .appmain {
-        flex:1;
-        background-color: red;
+        flex-grow:1;
+        background-color: lightpink;
     }
 
 </style>
