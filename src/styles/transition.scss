@@ -1,0 +1,20 @@
+// 这里面设置一些转换效果的全局css样式，以供组件使用
+
+// fade-transform:用于组件的切换，如app-main内容的切换
+// -enter-active和-leave-active用于描述整个进入和离开的过程
+// -enter 和 -leave-to配置进入前和离开后的状态
+// 结合起来就是根据opacity、transform和transition实现了从左进来，从右出去的效果
+.fade-transform-enter-active,
+.fade-transform-leave-active {
+    transition: all 0.5s;
+}
+
+.fade-transform-enter {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+    opacity:0;
+    transform: translateX(30px);
+}

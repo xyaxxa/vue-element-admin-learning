@@ -3,7 +3,7 @@
         <side-bar class="sidebar" />
         <div class="main-container">
             <nav-bar class="navbar" />
-            <app-main class="appmain" />
+            <app-main class="app-main" />
         </div>
     </div>
 </template>
@@ -42,7 +42,7 @@ export default {
         height:10%;
         background-color:lightyellow;
     }
-    .appmain {
+    .app-main {
         flex-grow:1;
         background-color: lightpink;
     }
