@@ -39,7 +39,7 @@ export default {
         flex-direction:column;
     }
     .navbar {
-        height:10%;
+        height:5%;
         background-color:lightyellow;
     }
     .app-main {
