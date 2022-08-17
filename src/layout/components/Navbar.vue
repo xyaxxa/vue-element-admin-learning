@@ -7,7 +7,7 @@
             <breadcrumb />
         </section>
         <section class="right-menu">
-            <right-menu />          
+            <right-menu />
         </section>
     </div>
 </template>
@@ -25,7 +25,7 @@ export default {
         RightMenu
     }
 }
-</script> 
+</script>
 
 <style scoped>
 .navbar {
