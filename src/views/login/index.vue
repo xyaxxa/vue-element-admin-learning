@@ -6,7 +6,7 @@
             <el-button type="text" style="color:black;border-bottom: 1px solid #03045E;">登录</el-button>
             </div>
             <div>
-            <router-link :to="{name:'registerPage'}"><el-button type="text">注册</el-button></router-link>
+            <router-link :to="{name:'RegisterPage'}"><el-button type="text">注册</el-button></router-link>
             </div>
         </div>
             <div class="login-container">

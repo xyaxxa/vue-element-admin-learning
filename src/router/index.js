@@ -6,23 +6,31 @@ import Layout from '@/layout/index'
 Vue.use(Router)
 
 //这里加了各种各样的路由规则，先不用着急用
+/**
+ * 规则如下
+ * hidden:true                  当设置为true，该路由项不会在侧边栏上显示，如login、register、404路由
+ */
 export const constantRoutes = [
     {
         path:'/login',
-        name: 'loginPage',
+        name: 'LoginPage',
+        hidden: true,
         component: () => import('@/views/login/index')
     },
     {
         path:'/register',
-        name: 'registerPage',
+        name: 'RegisterPage',
+        hidden: true,
         component: () => import('@/views/register/index')
     },
+
     {
         path:'/',
         component: Layout,
         redirect: '/dashboard',
         children: [{
             path:'dashboard',
+            name:'Dashboard',
             component: () => import('@/views/dashboard/index')
         }]
     }

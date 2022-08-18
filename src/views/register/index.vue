@@ -5,7 +5,7 @@
     <div class="main-container">
         <div class="tab-container">
             <div>
-                <router-link :to="{name:'loginPage'}"><el-button type="text">登录</el-button></router-link>
+                <router-link :to="{name:'LoginPage'}"><el-button type="text">登录</el-button></router-link>
             </div>
             <div>
             <el-button type="text" style="color:black;border-bottom: 1px solid #03045E;">注册</el-button>
