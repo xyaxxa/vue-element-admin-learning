@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    name: 'RightMenu',
+  name: 'RightMenu',
 }
 </script>
 
