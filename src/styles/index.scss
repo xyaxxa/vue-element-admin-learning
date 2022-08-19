@@ -1,4 +1,6 @@
 @import './transition.scss';
+@import './sidebar.scss';
+@import './colors.scss';
 
 body {
     height: 100%;
@@ -18,4 +20,8 @@ html{
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
 }

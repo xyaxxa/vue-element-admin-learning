@@ -1,5 +1,5 @@
 <template>
-  <div>logo</div>
+  <div class="logo">logo</div>
 </template>
 
 <script>
@@ -8,6 +8,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.logo {
+  height:50px;
+}
 </style>

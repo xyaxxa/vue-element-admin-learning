@@ -29,8 +29,7 @@ export default {
     }
     .sidebar {
         height:100%;
-        width:15%;
-        background-color:lightblue;
+        width:200px;
     }
     .main-container {
         height:100%;

@@ -1,0 +1,26 @@
+@import './colors.scss';
+
+.sidebar {
+    background-color: $menuBackground;
+}
+
+// 这样可以在把原生水平滚动条去除的同时占满底部空间，要去除掉logo的高度
+.el-scrollbar {
+    height:calc(100% - 50px);
+}
+.el-scrollbar__wrap {
+    overflow-x:hidden;
+    height:100%;
+}
+
+.el-submenu__title~.el-menu .el-submenu__title
+,.nested {
+    background-color: #1b4332 !important;
+    &:hover {
+        background-color: #081c15 !important;
+    }
+}
+
+.is-horizontal {
+    display: none;
+}

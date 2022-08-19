@@ -8,7 +8,12 @@ Vue.use(Router)
 //这里加了各种各样的路由规则，先不用着急用
 /**
  * 规则如下
- * hidden:true                  当设置为true，该路由项不会在侧边栏上显示，如login、register、404路由
+ * hidden:true                          当设置为true，该路由项不会在侧边栏上显示，如login、register、404路由
+ * 
+ * meta: {
+ *      title: ''                       要显示在侧边栏上的名字
+ *      icon:  'svg-name/el-icon-x'     要显示在侧边栏上的图标
+ * }
  */
 export const constantRoutes = [
     {
@@ -31,7 +36,53 @@ export const constantRoutes = [
         children: [{
             path:'dashboard',
             name:'Dashboard',
-            component: () => import('@/views/dashboard/index')
+            component: () => import('@/views/dashboard/index'),
+            meta: {
+                title: 'Dashboard'
+            }
+        }]
+    },
+    
+    {
+        path: '/nested',
+        name: 'Nested',
+        component: Layout,
+        redirect: '/nested/menu1',
+        meta: {
+            title:'Nested'
+        },
+        children: [{
+            path: 'menu1',
+            name: 'Menu1',
+            component: () => import('@/views/nested/menu1/index'),
+            meta: {
+                title: 'Menu1'
+            },
+            children: [{
+                path: 'menu1-1',
+                name: 'Menu1-1',
+                component: () => import('@/views/nested/menu1/menu1-1/index'),
+                meta: {
+                    title: 'Menu1-1'
+                }
+            },{
+                path: 'menu1-2',
+                name: 'Menu1-2',
+                component: () => import('@/views/nested/menu1/menu1-2/index'),
+                meta: {
+                    title: 'Menu1-2'
+                }
+            }]
+        }]
+    },
+    {
+        path: 'external-link',
+        component: Layout,
+        children: [{
+            path: 'https://www.baidu.com',
+            meta: {
+                title: 'External-Link'
+            }
         }]
     }
 ];
