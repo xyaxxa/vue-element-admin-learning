@@ -30,6 +30,7 @@ export default {
 <style scoped>
 .navbar {
     display: flex;
+    height:50px;
 }
 .hamburger {
     flex:1;

@@ -21,6 +21,7 @@ export default {
             if(icon.includes('el-icon')){
                 vnodes.push(<i class={[icon, 'sub-el-icon']} />)
             }else {
+                // 这个svg-icon官方有提供吗？不是作者自己写的组件吗
                 vnodes.push(<svg-icon icon-class={icon} />)
             }
         }

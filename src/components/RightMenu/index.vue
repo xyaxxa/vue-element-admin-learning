@@ -1,7 +1,7 @@
 <template>
-  <div class="right-menu">
-    <el-dropdown split-button type="primary" size="small">
-      下拉菜单
+  <div class="rightmenu-container">
+    <el-dropdown type="text" size="small">
+      <i class="el-icon-key"></i>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>1</el-dropdown-item>
         <el-dropdown-item>3</el-dropdown-item>
@@ -18,7 +18,8 @@ export default {
 </script>
 
 <style>
-.right-menu {
+.rightmenu-container {
+  height:100%;
   display: flex;
   align-items: center;
   justify-content: center;
