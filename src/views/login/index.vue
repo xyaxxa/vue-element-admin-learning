@@ -6,7 +6,7 @@
             <el-button type="text" style="color:black;border-bottom: 1px solid #03045E;">登录</el-button>
             </div>
             <div>
-            <router-link :to="{name:'RegisterPage'}"><el-button type="text">注册</el-button></router-link>
+            <router-link :to="{name:'Register'}"><el-button type="text">注册</el-button></router-link>
             </div>
         </div>
             <div class="login-container">
@@ -80,16 +80,12 @@ export default {
         handleLogin() {
             //这里写点击登录后验证用户密码是否有效的逻辑，要发送给服务端验证，用到axios。并且涉及状态存储，用到vuex
             // 首先要获取到表单数据，这里通过v-model动态绑定到了data里
-            const loginInfo = {
-                username: this.loginForm.username,
-                password: this.loginForm.password
-            };
-            // 在调用前，先对表单根据rules规定的规则进行预校验（有个问题，上面已经对每一项设置了校验规则了，这里还需要再次校验吗？），这里还想结合校验实现提交按钮的转圈圈
+            // 在调用前，先对表单根据rules规定的规则进行预校验（有个问题，上面已经对每一项设置了校验规则了，这里还需要再次校验吗？）
             this.$refs.loginForm.validate(valid => {
                 if(valid) {
                     this.loading = true;
                     // 调用user.js里的login方法，因为是store里的action，所以用dispatch
-                    this.$store.dispatch('user/login',loginInfo).then(() => {
+                    this.$store.dispatch('user/login',this.loginForm).then(() => {
                         // 成功登录，进行跳转
                         this.$router.push({name: 'Dashboard'});
                         this.loading = false;

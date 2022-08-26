@@ -5,7 +5,17 @@ const loginRequest = (loginInfo) => {
     return request({
         url: '/user/login',
         method: 'post',
-        data: loginInfo
+        data: {
+            username: loginInfo.username,
+            password: loginInfo.password
+        }
     })
 }
-export {loginRequest}
+
+const logoutRequest = () => {
+    return request({
+        url: 'user/logout',
+        method: 'post'
+    })
+}
+export {loginRequest,logoutRequest}
