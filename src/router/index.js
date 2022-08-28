@@ -87,6 +87,31 @@ export const constantRoutes = [
     }
 ];
 
+export const asyncRouters = [
+    {
+        path: '/example',
+        component: Layout,
+        children: [
+            {
+                path: 'table',
+                name: 'table',
+                component: () => import('@/views/table/index'),
+                meta: {
+                    name: 'Table'
+                }
+            },
+            {
+                path: 'form',
+                name: 'Form',
+                component: () => import('@/views/form/index'),
+                meta: {
+                    name: 'Form'
+                }
+            }
+        ]
+    }
+];
+
 const router = new Router({
     // 加了这句后可以去掉url里的/#。不过意味着需要服务器端做相应的处理，详见vue-router文档
     mode: 'history',

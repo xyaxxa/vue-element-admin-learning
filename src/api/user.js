@@ -18,4 +18,14 @@ const logoutRequest = () => {
         method: 'post'
     })
 }
-export {loginRequest,logoutRequest}
+
+const getUserInfoRequest = (token) => {
+    return request({
+        url: 'user/getUserInfo',
+        method: 'post',
+        data: {
+            token: token
+        }
+    })
+}
+export {loginRequest,logoutRequest,getUserInfoRequest}

@@ -66,14 +66,24 @@ export default {
         }
         return {
             loginForm: {
-                username: '',
-                password: '',
+                username: undefined,
+                password: undefined,
             },
             loginRules: {
                 username: [{trigger: 'blur', validator: validateUsername}],
                 password: [{trigger: 'blur', validator: validatePassword}],
             },
             loading: false,
+            redirect: undefined
+        }
+    },
+    watch: {
+        $route: {
+            handler: function(route){
+                this.redirect = route.query?.redirect;
+            },
+            //这个代表创建路由的时候也要执行一次handler
+            imdediate: true
         }
     },
     methods: {
@@ -87,7 +97,8 @@ export default {
                     // 调用user.js里的login方法，因为是store里的action，所以用dispatch
                     this.$store.dispatch('user/login',this.loginForm).then(() => {
                         // 成功登录，进行跳转
-                        this.$router.push({name: 'Dashboard'});
+                        // 前面那个先有值，就直接是他了，没有的话采用'/'
+                        this.$router.push({path: this.redirect || '/'});
                         this.loading = false;
                     }).catch(() => {
                         // 调用login方法时出了问题

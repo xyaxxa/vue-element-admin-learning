@@ -1,5 +1,5 @@
-import { loginRequest,logoutRequest } from "@/api/user"
-import { setTokenCookie, removeTokenCookie } from "@/utils/cookies"
+import { loginRequest,logoutRequest,getUserInfoRequest } from "@/api/user"
+import { setTokenCookie, removeTokenCookie, getTokenCookie } from "@/utils/cookies"
 
 // 为什么要加获取默认状态？为了后续重置state或清楚state做准备
 const getDefaultState = () => {
@@ -14,6 +14,12 @@ const state = getDefaultState()
 const mutations = {
     setToken: (state,token) => {
         state.token = token;
+    },
+    setName: (state,name) => {
+        state.name = name;
+    },
+    setAvatar: (state,avatar) => {
+        state.avatar = avatar;
     },
     resetState: (state) => {
         // 覆盖对象，合并对象的一个Object静态方法
@@ -43,6 +49,19 @@ const actions = {
             logoutRequest().then(() => {
                 commit('resetState');
                 removeTokenCookie();
+                resolve();
+            }).catch(error => {
+                reject(error);
+            })
+        })
+    },
+
+    getUserInfo({commit}) {
+        return new Promise((resolve,reject) => {
+            getUserInfoRequest(getTokenCookie()).then(response => {
+                const responseBody = response.data;
+                commit('setName',responseBody.name);
+                commit('setAvatar',responseBody.avatar);
                 resolve();
             }).catch(error => {
                 reject(error);

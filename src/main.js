@@ -10,6 +10,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 //导入全局css样式(针对body，html，app等)
 import '@/styles/index.scss'
 
+//如果想直接导入一整个js文件合并进来，用这种import
+import '@/permission'
+
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
