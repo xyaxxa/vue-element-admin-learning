@@ -2,7 +2,7 @@
   <div class="breadcrumb-container">
     <el-breadcrumb>
       <!-- 这个面包屑的转换效果还要改一下啊，照搬fade-transform不行 -->
-      <transition-group name="fade-transform" mode="out-in">
+      <transition-group name="fade-transform-vertical" mode="out-in">
         <el-breadcrumb-item v-for="(route,index) of routesCrumb" :key="route.path">
           <!-- 最后一个面包屑不用有跳转效果，利用了v-for提供的index来判断是否是最后一个！ -->
           <span v-if="index === routesCrumb.length-1" class="no-jump-breadcrumb">{{route.meta.title}}</span>

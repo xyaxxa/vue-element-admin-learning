@@ -5,8 +5,13 @@
 // -enter 和 -leave-to配置进入前和离开后的状态
 // 结合起来就是根据opacity、transform和transition实现了从左进来，从右出去的效果
 .fade-transform-enter-active,
-.fade-transform-leave-active {
+.fade-transform-leave-active,
+.fade-transform-vertical-leave-active {
     transition: all 0.5s;
+}
+
+.fade-transform-vertical-enter-active {
+    transition: all 2.5s;
 }
 
 .fade-transform-enter {
@@ -17,4 +22,14 @@
 .fade-transform-leave-to {
     opacity:0;
     transform: translateX(30px);
+}
+
+.fade-transform-vertical-enter {
+    opacity:0;
+    transform: translateY(-50px);
+}
+
+.fade-transform-vertical-leave-to {
+    opacity:0;
+    transform: translateY(50px);
 }
